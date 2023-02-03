@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        html,
+        body {
+            margin: 0px;
+            height: 100%;
+            width: 100%;
+        }
+
+        .banner {
+            width: 300px;
+            height: 600px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-image: url(light.png), url(background.png),
+                url(background-transparent.png);
+            background-repeat: no-repeat, no-repeat, no-repeat;
+            background-size: contain, contain, contain;
+
+        }
+
+        .content {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .second-background {
+            background: url(juice.png) 0 199px no-repeat,
+                url(honey-second.png) 142px 500px no-repeat,
+                url(tea-second.png) 192px 208px no-repeat;
+        }
+
+        .text {
+            font-family: "Roboto Condensed";
+            font-style: italic;
+            text-align: center;
+            color: rgb(45, 137, 87);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .first-header {
+            position: absolute;
+            width: 286.3px;
+            height: 74px;
+            left: 7.5px;
+            top: 37.65px;
+
+            font-size: 31.5604px;
+            line-height: 37px;
+            text-shadow:
+                -1.82174px 0 white,
+                1.82174px 0 white,
+                0 1.82174px white,
+                0 -1.82174px white,
+                -1.82174px -1.82174px white,
+                1.82174px 1.82174px white,
+                -1.82174px 1.82174px white,
+                1.82174px -1.82174px white,
+                2.910868px 2.910868px 3.64347px rgb(60, 186, 133),
+                0 2.910868px 3.64347px rgb(60, 186, 133);
+        }
+
+        .second-header {
+            position: absolute;
+            width: 257.46px;
+            height: 73px;
+            left: 21px;
+            top: 73.89px;
+
+            text-shadow:
+                -1.63822px 0 white,
+                1.63822px 0 white,
+                0 1.63822px white,
+                0 -1.63822px white,
+                -1.63822px -1.63822px white,
+                1.63822px 1.63822px white,
+                -1.63822px 1.63822px white,
+                1.63822px -1.63822px white,
+                2.45733px 2.45733px 3.27644px rgb(60, 186, 133),
+                0 2.45733px 3.27644px rgb(60, 186, 133);
+        }
+
+        .second-header-first-line {
+            font-size: 34.8117px;
+            line-height: 42px;
+        }
+
+        .second-header-second-line {
+            font-size: 27.5697px;
+            line-height: 29px;
+        }
+
+        .hint {
+            text-transform: none;
+            position: absolute;
+            width: 128px;
+            height: 19px;
+            left: 85.39px;
+            top: 122.71px;
+
+            font-size: 16.2956px;
+            line-height: 19px;
+            white-space: nowrap;
+        }
+
+        .button {
+            box-sizing: border-box;
+            position: absolute;
+            width: 133.2px;
+            height: 37.11px;
+            left: 83px;
+            top: 162.86px;
+            background: linear-gradient(180deg, rgb(241, 249, 183) 0%, rgb(198, 236, 158) 100%);
+            border: 0.822127px solid white;
+            border-radius: 32.8851px;
+            font-size: 26.0581px;
+            line-height: 38px;
+        }
+
+        .tile {
+            box-sizing: border-box;
+            position: absolute;
+            width: 112.5px;
+            height: 115.2px;
+            border: 0.918963px solid white;
+            border-radius: 27.6px;
+        }
+
+        .tile:focus,
+        .tile:hover,
+        .button:focus,
+        .button:hover {
+            transform: scale(1.1);
+            transition: 0.3s;
+        }
+
+        .honey {
+            background: url("honey-first.png") 8px 14px / 95px 92px no-repeat,
+                linear-gradient(186.15deg, rgb(247, 250, 186) 0.42%, rgb(197, 235, 157) 63.56%);
+        }
+
+        .tea {
+            background: url("tea-first.png") 4px 10px / 102px 95px no-repeat,
+                linear-gradient(186.15deg, rgb(247, 250, 186) 0.42%, rgb(197, 235, 157) 63.56%);
+        }
+
+        .orange {
+            background: url("orange.png") 15px 12px / 82px 85px no-repeat,
+                linear-gradient(186.15deg, rgb(247, 250, 186) 0.42%, rgb(197, 235, 157) 63.56%);
+        }
+
+        .first-screen-animation {
+            -webkit-animation: 0.7s 4s forwards disappearing;
+            -moz-animation: 0.7s 4s forwards disappearing;
+            -o-animation: 0.7s 4s forwards disappearing;
+            animation: 0.7s 4s forwards disappearing;
+        }
+
+        .second-screen-animation {
+            -webkit-animation: 1s 4.7s forwards appearing;
+            -moz-animation: 1s 4.7s forwards appearing;
+            -o-animation: 1s 4.7s forwards appearing;
+            animation: 1s 4.7s forwards appearing;
+        }
+
+        @-webkit-keyframes disappearing {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        @-moz-keyframes disappearing {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        @-o-keyframes disappearing {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        @keyframes disappearing {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+
+        @-webkit-keyframes appearing {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes appearing {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        @-o-keyframes appearing {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        @keyframes appearing {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="content first-screen-animation">
+            <div class="first-header text">Try different flavours</div>
+            <div class="hint text"><span style="font-weight: 400;">you have</span> 3 attempts</div>
+            <div class="tile honey" style="left: 31.85px; top: 172.53px"></div>
+            <div class="tile tea" style="left: 159px; top: 173.24px"></div>
+            <div class="tile orange" style="left: 32px; top: 304px"></div>
+            <div class="tile honey" style="left: 158.85px; top: 303.53px"></div>
+            <div class="tile orange" style="left: 32px; top: 434px"></div>
+            <div class="tile tea" style="left: 159px; top: 434.24px"></div>
+        </div>
+        <div class="content second-background second-screen-animation" style="visibility: hidden;">
+            <div class="second-header text">
+                <span class="second-header-first-line">Try refreshing</span>
+                <span class="second-header-second-line"> ready-to-drink tea</span>
+            </div>
+
+            <a href="https://www.google.com/" target="_blank">
+                <div class="button button-text text">Buy</div>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
